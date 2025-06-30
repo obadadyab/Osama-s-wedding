@@ -8,7 +8,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Reem+Kufi+Ink&display=swap" rel="stylesheet" />
 <style>
   html, body {
-    height: 400%;
+    height: 100%;
     margin: 0;
     padding: 0;
   }
@@ -29,15 +29,13 @@
   }
 
   @media (max-width: 768px) {
-    body {
-      background: 
-        linear-gradient(rgba(250, 246, 240, 0.85), rgba(250, 246, 240, 0.85)),
-        url('Green and White Wedding Zoom Virtual Background.png') no-repeat center top scroll;
-      background-size: contain;
-      display: block; /* to prevent flex issues on small screens */
-      padding-top: 20px;
-    }
+  body {
+    background-size: contain;
+    background-position: center top;
+    background-attachment: scroll;
+    min-height: 100vh;
   }
+}
 
   .content-container {
     background-color: transparent;
