@@ -7,27 +7,52 @@
 <script src="https://cdn.tailwindcss.com"></script>
 <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=Reem+Kufi+Ink&display=swap" rel="stylesheet" />
 <style>
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+
   body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Reem Kufi Ink', 'Amiri', serif;
-      background-color: #faf6f0; /* fallback color */
-      background-image: url('Green and White Wedding Zoom Virtual Background.png');
-      background-repeat: no-repeat;
-      background-position: center center;
-      background-size: cover; /* fill desktop nicely */
-      color: #5b3e2a;
-      animation: fadeInDown 2s ease-in-out;
-      min-height: 100vh; /* ensure full viewport height */
+    font-family: 'Reem Kufi Ink', 'Amiri', serif;
+    color: #5b3e2a;
+    min-height: 100vh;
+    /* Background with a dark translucent overlay for readability */
+    background: 
+      linear-gradient(rgba(250, 246, 240, 0.85), rgba(250, 246, 240, 0.85)),
+      url('Green and White Wedding Zoom Virtual Background.png') no-repeat center center fixed;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    animation: fadeInDown 2s ease-in-out;
+  }
+
+  @media (max-width: 768px) {
+    body {
+      background: 
+        linear-gradient(rgba(250, 246, 240, 0.85), rgba(250, 246, 240, 0.85)),
+        url('Green and White Wedding Zoom Virtual Background.png') no-repeat center top scroll;
+      background-size: contain;
+      display: block; /* to prevent flex issues on small screens */
+      padding-top: 20px;
     }
-    @media (max-width: 768px) {
-      body {
-        background-size: contain; /* fit on smaller screens */
-        background-position: center top;
-        background-repeat: no-repeat;
-        background-attachment: scroll; /* prevent fixed background issues on mobile */
-      }
-    }
+  }
+
+  .content-container {
+    background-color: transparent;
+    max-width: 700px;
+    padding: 2rem;
+    border-radius: 1.5rem;
+    box-shadow: 0 0 25px rgba(0,0,0,0.08);
+    text-align: center;
+    z-index: 1;
+    position: relative;
+    margin: 30px auto;
+    width: 90%;
+    max-width: 700px;
+    backdrop-filter: saturate(180%) blur(10px);
+  }
   @keyframes fadeInDown {
     from { opacity: 0; transform: translateY(-20px); }
     to { opacity: 1; transform: translateY(0); }
